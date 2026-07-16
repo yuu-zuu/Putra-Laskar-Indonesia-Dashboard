@@ -1,0 +1,49 @@
+{
+  "name": "spbu-ops-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Putra Laskar Indonesia Dashboard untuk stock, pompa, rekonsiliasi, dan pelaporan.",
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "dev:web": "npm run dev --workspace @spbu/web",
+    "dev:api": "npm run dev --workspace @spbu/api",
+    "clean": "npm run clean --workspace @spbu/contracts && npm run clean --workspace @spbu/api && npm run clean --workspace @spbu/web",
+    "build": "npm run build --workspace @spbu/contracts && npm run build --workspace @spbu/api && npm run build --workspace @spbu/web",
+    "check": "npm run build --workspace @spbu/contracts && npm run check --workspace @spbu/api && npm run check --workspace @spbu/web && tsc -p tsconfig.vercel.json",
+    "test": "npm run test --workspace @spbu/contracts && npm run test --workspace @spbu/api",
+    "test:browser-compat": "node --import tsx scripts/browserCompatibilitySmoke.mjs",
+    "verify:browser-bundle": "node scripts/verifyBrowserBundle.mjs",
+    "test:coverage": "npm run test:coverage --workspace @spbu/contracts && npm run test:coverage --workspace @spbu/api",
+    "lint": "biome lint .",
+    "format": "biome format --write .",
+    "format:check": "biome format .",
+    "quality": "npm run format:check && npm run lint && npm run check && npm run test:coverage && npm run test:browser-compat && npm run build && npm run verify:browser-bundle",
+    "db:migrate": "npm run db:migrate --workspace @spbu/api",
+    "db:verify": "npm run db:verify --workspace @spbu/api",
+    "db:verify-account-assignment": "npm run db:verify-account-assignment --workspace @spbu/api",
+    "db:seed": "npm run db:seed --workspace @spbu/api",
+    "auth:bootstrap-admin": "npm run auth:bootstrap-admin --workspace @spbu/api"
+  },
+  "engines": {
+    "node": "24.x",
+    "npm": ">=11.0.0 <13"
+  },
+  "packageManager": "npm@12.0.1",
+  "devDependencies": {
+    "@biomejs/biome": "2.5.3",
+    "@types/node": "24.13.3",
+    "typescript": "7.0.2"
+  },
+  "optionalDependencies": {
+    "@rolldown/binding-linux-x64-gnu": "1.1.5",
+    "@rolldown/binding-linux-x64-musl": "1.1.5"
+  },
+  "allowScripts": {
+    "esbuild@0.28.1": true
+  }
+}

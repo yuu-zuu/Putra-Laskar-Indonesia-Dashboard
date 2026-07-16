@@ -1,0 +1,94 @@
+html {
+  min-width: 320px;
+  background: var(--crust);
+}
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+}
+button,
+input,
+select,
+textarea {
+  color: inherit;
+}
+button,
+select {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: not-allowed;
+  color: var(--overlay);
+}
+a {
+  text-decoration: none;
+}
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+::selection {
+  color: var(--crust);
+  background: var(--blue);
+}
+code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+}
+h1,
+h2,
+h3,
+strong {
+  color: var(--text);
+}
+h1 {
+  font-size: clamp(1.7rem, 2.8vw, 2.35rem);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+}
+h2 {
+  font-size: 1.05rem;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+}
+small {
+  color: var(--subtext);
+  font-size: 0.78rem;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.eyebrow {
+  color: var(--blue);
+  font-size: 0.7rem;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.muted {
+  color: var(--subtext);
+  font-size: 0.8rem;
+}
+.value-ok {
+  color: var(--green);
+}
+.value-danger {
+  color: var(--red);
+}
+.value-warning {
+  color: var(--yellow);
+}

@@ -1,0 +1,6 @@
+{
+  "application": "Putra Laskar Indonesia Dashboard",
+  "release": "2026.07.16-auth-trace.3",
+  "requestIdStrategy": "server-assigned",
+  "operationIdStrategy": "getRandomValues-with-local-fallback"
+}

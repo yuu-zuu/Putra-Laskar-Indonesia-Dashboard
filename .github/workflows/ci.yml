@@ -1,0 +1,106 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    name: Quality gate (Node 24 LTS)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24.18.0
+          cache: npm
+      - run: npm install --global npm@12.0.1
+      - run: npm ci --include=optional
+      - run: npm audit --audit-level=high
+      - run: npm run quality
+
+  database:
+    name: PostgreSQL migration smoke test
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    services:
+      postgres:
+        image: postgres:18.4-alpine3.24
+        env:
+          POSTGRES_DB: spbu_ops_test
+          POSTGRES_USER: spbu
+          POSTGRES_PASSWORD: spbu-ci-only
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U spbu -d spbu_ops_test"
+          --health-interval 5s
+          --health-timeout 3s
+          --health-retries 20
+    env:
+      NODE_ENV: test
+      DATABASE_URL: postgres://spbu:spbu-ci-only@127.0.0.1:5432/spbu_ops_test
+      DB_POOL_MAX: 2
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24.18.0
+          cache: npm
+      - run: npm install --global npm@12.0.1
+      - run: npm ci --include=optional
+      - run: npm run db:migrate
+      - run: npm run db:migrate
+      - run: npm run db:verify
+      - run: npm run db:verify-account-assignment
+
+  containers:
+    name: Alpine container builds
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - run: docker build --file apps/api/Dockerfile --tag pli-api:ci .
+      - run: docker build --file apps/web/Dockerfile --tag pli-web:ci .
+      - name: Smoke-test web runtime
+        run: |
+          test "$(docker image inspect pli-web:ci --format '{{.Config.User}}')" = app
+          docker run --detach --read-only --name pli-web-ci --publish 4173:4173 pli-web:ci
+          curl --fail --retry 20 --retry-delay 1 --retry-connrefused http://127.0.0.1:4173/
+          docker rm --force pli-web-ci
+      - name: Smoke-test API liveness
+        run: |
+          test "$(docker image inspect pli-api:ci --format '{{.Config.User}}')" = app
+          docker run --detach --read-only --name pli-api-ci --publish 8787:8787 \
+            --env NODE_ENV=production \
+            --env WEB_ORIGIN=https://dashboard.example.com \
+            --env ALLOWED_WEB_ORIGINS=https://dashboard.example.com \
+            --env REQUIRE_CLIENT_PROVENANCE=true \
+            --env DATABASE_URL='postgres://u:p@127.0.0.1:5432/app?sslmode=require' \
+            --env REGISTRATION_CODE_SECRET=ci-only-registration-secret-32-bytes \
+            --env SESSION_COOKIE_NAME=__Host-pli_session \
+            --env SESSION_COOKIE_SECURE=true \
+            --env S3_ENDPOINT=https://objects.example.com \
+            --env S3_INTERNAL_ENDPOINT=https://objects.example.com \
+            --env S3_BUCKET=ci-only \
+            --env S3_ACCESS_KEY=ci-only \
+            --env S3_SECRET_KEY=ci-only \
+            pli-api:ci
+          curl --fail --retry 20 --retry-delay 1 --retry-connrefused http://127.0.0.1:8787/api/health
+          docker rm --force pli-api-ci
