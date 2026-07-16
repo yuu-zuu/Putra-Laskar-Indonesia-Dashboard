@@ -7,7 +7,8 @@
 | `packages/contracts` | DTO, enum TypeScript, formula, util hitung meter | Standard library saja |
 | `apps/api` | HTTP API, auth, validasi, transaksi, SQL, presign | contracts, `pg`, Node API |
 | `apps/web` | UI React, context, gateway, chart, export | contracts, React; XLSX secara dinamis |
-| `api/[...path].mjs` | Adapter Vercel Function | handler JavaScript terkompilasi dari `apps/api/dist` |
+| `api/gateway.mjs` | Adapter Vercel Function tetap | pemulih path rewrite + handler JavaScript terkompilasi dari `apps/api/dist` |
+| `scripts/vercelRoute.mjs` | Memulihkan path publik `/api/*` setelah rewrite Vercel | adapter Function; diuji tanpa runtime Vercel |
 | `database/migrations` | Schema production | PostgreSQL 18 |
 | `database/seeds` | Dataset workbook local-only | Schema hasil migration |
 | `scripts` | Orkestrasi dev dan Podman | Node/shell host |

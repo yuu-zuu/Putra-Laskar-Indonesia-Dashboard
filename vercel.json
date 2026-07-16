@@ -5,10 +5,16 @@
   "buildCommand": "npm run build",
   "outputDirectory": "apps/web/dist",
   "functions": {
-    "api/[...path].mjs": {
+    "api/gateway.mjs": {
       "maxDuration": 60
     }
   },
+  "rewrites": [
+    {
+      "source": "/api/:__pli_api_path*",
+      "destination": "/api/gateway"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

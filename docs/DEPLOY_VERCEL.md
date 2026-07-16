@@ -1,6 +1,6 @@
 # Deploy ke Vercel
 
-Vercel menyajikan `apps/web/dist` sebagai static site dan menjalankan `api/[...path].mjs` sebagai Node.js Function. Build lebih dahulu mengompilasi TypeScript 7 API ke `apps/api/dist`; adapter Function hanya mengimpor JavaScript hasil kompilasi tersebut. PostgreSQL dan object storage harus eksternal; filesystem Function tidak dipakai sebagai penyimpanan persisten.
+Vercel menyajikan `apps/web/dist` sebagai static site dan menjalankan `api/gateway.mjs` sebagai Node.js Function. Rewrite `/api/:__pli_api_path*` meneruskan seluruh route API bertingkat ke Function tetap tersebut, kemudian adapter memulihkan path publik sebelum memanggil router aplikasi. Build lebih dahulu mengompilasi TypeScript 7 API ke `apps/api/dist`; adapter Function hanya mengimpor JavaScript hasil kompilasi tersebut. PostgreSQL dan object storage harus eksternal; filesystem Function tidak dipakai sebagai penyimpanan persisten.
 
 Vercel Functions mendukung Node 24.x sebagai default LTS saat dokumen ini diperbarui. Project dan local Compose sama-sama dikunci ke Node 24.18.0 agar hasil build tidak berbeda. Referensi: [Vercel supported Node.js versions](https://vercel.com/docs/functions/runtimes/node-js/node-js-versions).
 
@@ -76,7 +76,7 @@ Gunakan repository root sebagai Root Directory. `vercel.json` menetapkan:
 - `npm ci --omit=dev --include=optional` agar instalasi production tetap menyediakan seluruh tool build yang dideklarasikan langsung oleh workspace dan binding Rolldown;
 - build contracts + API + web menggunakan TypeScript 7;
 - output `apps/web/dist`;
-- catch-all Function JavaScript `api/[...path].mjs` dengan durasi maksimum 60 detik;
+- rewrite wildcard `/api/:__pli_api_path*` menuju Function JavaScript tetap `api/gateway.mjs` dengan durasi maksimum 60 detik;
 - header CSP/security.
 
 Entrypoint Function sengaja berupa `.mjs`, bukan `.ts`. TypeScript 7.0 menyediakan compiler CLI native tetapi belum menyediakan programmatic compiler API yang masih dipanggil builder TypeScript Vercel. Precompile ini mempertahankan TypeScript 7 untuk pemeriksaan dan emit aplikasi tanpa menggantungkan deployment pada API compiler tersebut.
@@ -108,7 +108,7 @@ Untuk CLI, instal versi current sesuai dokumentasi Vercel dan jangan commit `.ve
 
 ## 7. Smoke test
 
-- `GET /api/health` menguji liveness tanpa database; `GET /api/ready` menguji koneksi PostgreSQL.
+- `GET /api/health` menguji liveness tanpa database; `GET /api/ready` menguji koneksi PostgreSQL; `GET /api/v1/auth/me` harus mencapai API dan mengembalikan `401` sebelum login, bukan 404 Vercel.
 - Login/logout/cookie Secure bekerja pada domain final.
 - Branch/product/unit/meter dapat dibuat sesuai role.
 - Concurrent posting tidak menggandakan idempotency.

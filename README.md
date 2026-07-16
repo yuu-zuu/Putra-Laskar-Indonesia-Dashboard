@@ -130,7 +130,7 @@ Pastikan `.env` berisi `NODE_ENV=development`, `ALLOW_LOCAL_SEED=true`, dan `VIT
 
 ## Deployment Vercel
 
-Repository root sudah berisi `vercel.json` dan `api/[...path].mjs`. Build production mengompilasi contracts, API, dan web menggunakan TypeScript 7 terlebih dahulu. Frontend disajikan sebagai Vite static output, sedangkan route `/api/*` menjalankan hasil JavaScript API sebagai Vercel Node Function dengan handler yang sama seperti local server. Entrypoint JavaScript ini menghindari ketergantungan pada programmatic compiler API yang belum disediakan TypeScript 7.0.
+Repository root sudah berisi `vercel.json` dan `api/gateway.mjs`. Build production mengompilasi contracts, API, dan web menggunakan TypeScript 7 terlebih dahulu. Frontend disajikan sebagai Vite static output, sedangkan rewrite `/api/:path*` meneruskan seluruh kedalaman route ke satu Vercel Node Function dengan handler yang sama seperti local server. Entrypoint JavaScript ini menghindari ketergantungan pada programmatic compiler API yang belum disediakan TypeScript 7.0.
 
 Ringkasnya:
 
