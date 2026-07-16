@@ -1,6 +1,6 @@
 # Deploy ke Vercel
 
-Vercel menyajikan `apps/web/dist` sebagai static site dan menjalankan `api/[...path].ts` sebagai Node.js Function. PostgreSQL dan object storage harus eksternal; filesystem Function tidak dipakai sebagai penyimpanan persisten.
+Vercel menyajikan `apps/web/dist` sebagai static site dan menjalankan `api/[...path].mjs` sebagai Node.js Function. Build lebih dahulu mengompilasi TypeScript 7 API ke `apps/api/dist`; adapter Function hanya mengimpor JavaScript hasil kompilasi tersebut. PostgreSQL dan object storage harus eksternal; filesystem Function tidak dipakai sebagai penyimpanan persisten.
 
 Vercel Functions mendukung Node 24.x sebagai default LTS saat dokumen ini diperbarui. Project dan local Compose sama-sama dikunci ke Node 24.18.0 agar hasil build tidak berbeda. Referensi: [Vercel supported Node.js versions](https://vercel.com/docs/functions/runtimes/node-js/node-js-versions).
 
@@ -73,11 +73,17 @@ Jangan jalankan `npm run db:seed`. Seed workbook memiliki guard yang selalu meno
 Gunakan repository root sebagai Root Directory. `vercel.json` menetapkan:
 
 - framework `vite`;
-- `npm ci --include=optional` agar binding Rolldown tersedia;
-- build contracts + web;
+- `npm ci --omit=dev --include=optional` agar instalasi production tetap menyediakan seluruh tool build yang dideklarasikan langsung oleh workspace dan binding Rolldown;
+- build contracts + API + web menggunakan TypeScript 7;
 - output `apps/web/dist`;
-- catch-all Function `api/[...path].ts` dengan durasi maksimum 60 detik;
+- catch-all Function JavaScript `api/[...path].mjs` dengan durasi maksimum 60 detik;
 - header CSP/security.
+
+Entrypoint Function sengaja berupa `.mjs`, bukan `.ts`. TypeScript 7.0 menyediakan compiler CLI native tetapi belum menyediakan programmatic compiler API yang masih dipanggil builder TypeScript Vercel. Precompile ini mempertahankan TypeScript 7 untuk pemeriksaan dan emit aplikasi tanpa menggantungkan deployment pada API compiler tersebut.
+
+Compiler, type package, Vite, dan plugin React yang dipakai saat build sengaja dideklarasikan sebagai `dependencies` langsung pada workspace pemakainya. Vercel dapat melakukan fase instalasi production-only saat menyiapkan Function; deklarasi ini membuat build tiap workspace mandiri dan mencegah `tsc: command not found`. Paket build yang tidak diimpor oleh handler tidak ikut ke bundle Function hasil file tracing.
+
+Build workspace API dan web juga mandiri secara topologis: masing-masing membangun `@spbu/contracts` sebelum `build:self`. Karena itu build Vercel tetap valid ketika Function builder menjalankan workspace API secara terpisah. Build dari root memakai `build:self` setelah satu build contracts agar kompilasi tidak diulang.
 
 Pool `pg` didaftarkan ke Vercel Fluid Compute melalui `attachDatabasePool`; tetap gunakan pooled database endpoint dan `DB_POOL_MAX=2` agar jumlah koneksi antarscale-out terkendali.
 

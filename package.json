@@ -13,8 +13,8 @@
     "dev:web": "npm run dev --workspace @spbu/web",
     "dev:api": "npm run dev --workspace @spbu/api",
     "clean": "npm run clean --workspace @spbu/contracts && npm run clean --workspace @spbu/api && npm run clean --workspace @spbu/web",
-    "build": "npm run build --workspace @spbu/contracts && npm run build --workspace @spbu/api && npm run build --workspace @spbu/web",
-    "check": "npm run build --workspace @spbu/contracts && npm run check --workspace @spbu/api && npm run check --workspace @spbu/web && tsc -p tsconfig.vercel.json",
+    "build": "npm run build --workspace @spbu/contracts && npm run build:self --workspace @spbu/api && npm run build:self --workspace @spbu/web",
+    "check": "npm run build --workspace @spbu/contracts && npm run check --workspace @spbu/api && npm run check --workspace @spbu/web && node --check \"api/[...path].mjs\"",
     "test": "npm run test --workspace @spbu/contracts && npm run test --workspace @spbu/api",
     "test:browser-compat": "node --import tsx scripts/browserCompatibilitySmoke.mjs",
     "verify:browser-bundle": "node scripts/verifyBrowserBundle.mjs",
@@ -35,9 +35,7 @@
   },
   "packageManager": "npm@12.0.1",
   "devDependencies": {
-    "@biomejs/biome": "2.5.4",
-    "@types/node": "26.1.1",
-    "typescript": "7.0.2"
+    "@biomejs/biome": "2.5.4"
   },
   "optionalDependencies": {
     "@rolldown/binding-linux-x64-gnu": "1.2.0",

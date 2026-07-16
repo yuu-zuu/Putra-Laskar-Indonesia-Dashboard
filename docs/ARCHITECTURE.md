@@ -86,6 +86,6 @@ Dashboard dan pengumuman memakai polling 10 detik; log aktivitas 15 detik. Ini s
 | Lingkungan | Web | API | Database | Object storage |
 |---|---|---|---|---|
 | Local Compose | Node static server Alpine | Node HTTP Alpine | PostgreSQL Alpine | SeaweedFS mini |
-| Vercel | Vite static CDN | `api/[...path].ts` Node Function | PostgreSQL eksternal pooled | S3-compatible eksternal |
+| Vercel | Vite static CDN | `api/[...path].mjs` Node Function dari API terkompilasi | PostgreSQL eksternal pooled | S3-compatible eksternal |
 
 Production tidak menjalankan seed. Migration dan bootstrap admin adalah pekerjaan administratif terpisah dari request Function.

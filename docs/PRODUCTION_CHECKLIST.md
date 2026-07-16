@@ -4,7 +4,7 @@ Checklist ini adalah release gate, bukan klaim bahwa pengujian independen dapat 
 
 ## Build dan kode
 
-- [ ] Node 24.x dan npm 12 menjalankan `npm ci --include=optional` dari clone bersih.
+- [ ] Node 24.x dan npm 12 menjalankan `npm ci --omit=dev --include=optional` lalu `npm run build` dari clone bersih.
 - [ ] `npm run quality` dan `npm audit --audit-level=high` lulus.
 - [ ] Tiga job GitHub Actions lulus pada commit yang akan dideploy.
 - [ ] Tidak ada `.env`, credential, dump, workbook pengguna, atau log production dalam commit.
