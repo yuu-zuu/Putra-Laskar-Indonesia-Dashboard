@@ -7,7 +7,9 @@ import { Panel } from "../components/Panel.js";
 import { useBranches } from "../app/branches.js";
 import { useDashboard } from "../hooks/useDashboard.js";
 import { recordReportExport } from "../data/operationsGateway.js";
-import { downloadCsv, downloadXlsx } from "../lib/download.js";
+import { getOperationalReportPackage } from "../data/reportsGateway.js";
+import { downloadCsv } from "../lib/download.js";
+import { downloadOperationalReportXlsx } from "../lib/operationalReportXlsx.js";
 import { formatCurrency, formatLiter } from "../lib/format.js";
 
 const reportSections = [
@@ -68,103 +70,85 @@ export function ReportsPage() {
   const { data } = useDashboard(activeBranch?.id ?? "", to);
   const [format, setFormat] = useState<"csv" | "xlsx">("xlsx");
   const [message, setMessage] = useState("");
-
-  const reconciliationRows = () =>
-    (data?.reconciliations ?? []).map((row) => ({
-      tanggal: row.businessDate,
-      meter: row.meterUnitName,
-      unit_stock: row.stockUnitName,
-      penjualan_meter_l: row.meterSalesQty,
-      penjualan_posting_l: row.postedSalesQty,
-      selisih_l: row.literVariance,
-      nilai_seharusnya: row.expectedSalesAmount,
-      setoran: row.cashDepositAmount,
-      selisih_kas: row.cashVariance,
-      status: row.status,
-      catatan: row.note ?? "",
-    }));
+  const [exporting, setExporting] = useState(false);
 
   const exportReport = async () => {
-    if (data === null) {
+    if (activeBranch === null) {
       setMessage(
         l(
-          "Data laporan belum tersedia.",
-          "Report data is not available yet.",
-          "报告数据尚不可用。",
+          "Pilih cabang aktif terlebih dahulu.",
+          "Select an active branch first.",
+          "请先选择当前分支。",
         ),
       );
       return;
     }
-    if (format === "csv") {
-      downloadCsv(`rekonsiliasi-${from}-${to}.csv`, reconciliationRows());
-      if (activeBranch !== null) await recordReportExport(activeBranch.id, "csv", from, to);
+    if (from > to) {
       setMessage(
         l(
-          "CSV rekonsiliasi dibuat di perangkat Anda.",
-          "The reconciliation CSV was created on your device.",
-          "对账 CSV 已在您的设备上生成。",
+          "Tanggal awal tidak boleh setelah tanggal akhir.",
+          "The start date cannot be after the end date.",
+          "开始日期不能晚于结束日期。",
         ),
       );
       return;
     }
-    await downloadXlsx(`laporan-operasional-${from}-${to}.xlsx`, [
-      {
-        name: "Summary",
-        rows: [
-          {
-            cabang: data.summary.branch.name,
-            periode_awal: from,
-            periode_akhir: to,
-            stock_akhir_l: data.summary.closingStockQty,
-            penjualan_l: data.summary.salesQty,
-            penjualan_rp: data.summary.salesAmount,
-            setoran_rp: data.summary.cashDepositAmount,
-            laba_kotor_fifo_rp: data.summary.grossProfitAmount,
-            selisih_l: data.summary.literVariance,
-            selisih_kas_rp: data.summary.cashVariance,
-          },
-        ],
-      },
-      {
-        name: "Daily Stock",
-        rows: data.stockUnits.map((unit) => ({
-          tanggal: data.summary.businessDate,
-          unit_stock: unit.name,
-          produk: unit.productName,
-          stock_awal_l: unit.openingQty,
-          supply_l: unit.supplyQty,
-          penjualan_l: unit.salesQty,
-          retur_l: unit.returnQty,
-          transfer_masuk_l: unit.transferInQty,
-          transfer_keluar_l: unit.transferOutQty,
-          gain_l: unit.gainQty,
-          loss_l: unit.lossQty,
-          stock_akhir_l: unit.closingQty,
-        })),
-      },
-      { name: "Meter Reconciliation", rows: reconciliationRows() },
-      {
-        name: "Audit Metadata",
-        rows: [
-          {
-            generated_by: user?.displayName ?? "Unknown user",
-            generated_at: new Date().toISOString(),
-            timezone: data.summary.branch.timezone,
-            application_version: "1.0.0",
-            report_version: "2026-07",
-            data_mode: "api",
-          },
-        ],
-      },
-    ]);
-    if (activeBranch !== null) await recordReportExport(activeBranch.id, "xlsx", from, to);
-    setMessage(
-      l(
-        "Laporan XLSX multi-sheet dibuat di perangkat Anda.",
-        "The multi-sheet XLSX report was created on your device.",
-        "多工作表 XLSX 报告已在您的设备上生成。",
-      ),
-    );
+    setExporting(true);
+    setMessage("");
+    try {
+      const report = await getOperationalReportPackage(activeBranch.id, from, to);
+      if (format === "csv") {
+        downloadCsv(
+          `rekonsiliasi-${from}-${to}.csv`,
+          report.meterReconciliations.map((row) => ({
+            tanggal: row.businessDate,
+            meter: row.meterUnitName,
+            unit_stock: row.stockUnitName,
+            meter_awal: row.meterStart,
+            meter_akhir: row.meterEnd,
+            reset: row.meterResetOffset,
+            penjualan_meter_l: row.meterSalesQty,
+            penjualan_posting_l: row.postedSalesQty,
+            selisih_l: row.literVariance,
+            nilai_seharusnya_rp: row.expectedSalesAmount,
+            setoran_rp: row.cashDepositAmount,
+            selisih_kas_rp: row.cashVariance,
+            status: row.reconciliationStatus,
+            catatan: row.note ?? "",
+          })),
+        );
+        await recordReportExport(activeBranch.id, "csv", from, to);
+        setMessage(
+          l(
+            "CSV rekonsiliasi seluruh periode dibuat di perangkat Anda.",
+            "The full-period reconciliation CSV was created on your device.",
+            "全期间对账 CSV 已在您的设备上生成。",
+          ),
+        );
+        return;
+      }
+      await downloadOperationalReportXlsx(
+        `laporan-operasional-lengkap-${from}-${to}.xlsx`,
+        report,
+        user?.displayName ?? "Unknown user",
+      );
+      await recordReportExport(activeBranch.id, "xlsx", from, to);
+      setMessage(
+        l(
+          "Laporan XLSX lengkap dan detail dibuat di perangkat Anda.",
+          "The complete detailed XLSX report was created on your device.",
+          "完整详细的 XLSX 报告已在您的设备上生成。",
+        ),
+      );
+    } catch (error) {
+      setMessage(
+        error instanceof Error
+          ? error.message
+          : l("Laporan gagal dibuat.", "The report could not be generated.", "无法生成报告。"),
+      );
+    } finally {
+      setExporting(false);
+    }
   };
 
   return (
@@ -208,8 +192,10 @@ export function ReportsPage() {
               <option value="csv">CSV — reconciliation</option>
             </select>
           </label>
-          <button className="button button-primary" type="submit">
-            {l("Buat laporan", "Generate report", "生成报告")}
+          <button className="button button-primary" type="submit" disabled={exporting}>
+            {exporting
+              ? l("Menyiapkan laporan...", "Preparing report...", "正在准备报告...")
+              : l("Buat laporan", "Generate report", "生成报告")}
           </button>
         </form>
         {message === "" ? null : (
