@@ -106,6 +106,9 @@ textarea:focus {
 .date-filter {
   background: var(--mantle);
 }
+.toggle-filter {
+  background: var(--mantle);
+}
 .date-filter input {
   background: var(--surface-0);
 }

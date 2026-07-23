@@ -13,6 +13,16 @@ export interface FinancialMetrics {
   pendingApprovalCount: number;
 }
 
+export interface RangeMetrics extends FinancialMetrics {
+  startDate: string;
+  endDate: string;
+  salesQty: number;
+  cashDepositAmount: number;
+  literVariance: number;
+  cashVariance: number;
+  unresolvedCount: number;
+}
+
 export class DashboardRepository {
   async branch(branchId: string): Promise<Branch | null> {
     const result = await pool.query<{
@@ -248,6 +258,102 @@ export class DashboardRepository {
       salesAmount: row?.sales_amount ?? 0,
       grossProfitAmount: row?.gross_profit_amount ?? 0,
       pendingApprovalCount: row?.pending_approval_count ?? 0,
+    };
+  }
+
+  async rangeMetrics(branchId: string, businessDate: string, days: number): Promise<RangeMetrics> {
+    const result = await pool.query<{
+      start_date: string;
+      end_date: string;
+      sales_qty: number;
+      sales_amount: number;
+      cash_deposit_amount: number;
+      gross_profit_amount: number;
+      liter_variance: number;
+      cash_variance: number;
+      unresolved_count: number;
+      pending_approval_count: number;
+    }>(
+      `WITH bounds AS (
+         SELECT ($2::date - ($3::int - 1))::date AS start_date,$2::date AS end_date
+       )
+       SELECT
+         bounds.start_date::text,
+         bounds.end_date::text,
+         COALESCE((
+           SELECT SUM(reading.meter_sales_qty)
+           FROM sales_meter_reading reading
+           WHERE reading.branch_id=$1
+             AND reading.business_date BETWEEN bounds.start_date AND bounds.end_date
+             AND reading.posting_status='POSTED'
+         ),0) AS sales_qty,
+         COALESCE((
+           SELECT SUM(allocation.quantity * allocation.unit_selling_price)
+           FROM fifo_allocation allocation
+           JOIN sales_meter_reading reading ON reading.id=allocation.sales_meter_reading_id
+           WHERE reading.branch_id=$1
+             AND reading.business_date BETWEEN bounds.start_date AND bounds.end_date
+             AND reading.posting_status='POSTED'
+         ),0) AS sales_amount,
+         COALESCE((
+           SELECT SUM(reading.cash_deposit_amount)
+           FROM sales_meter_reading reading
+           WHERE reading.branch_id=$1
+             AND reading.business_date BETWEEN bounds.start_date AND bounds.end_date
+             AND reading.posting_status='POSTED'
+         ),0) AS cash_deposit_amount,
+         COALESCE((
+           SELECT SUM(allocation.quantity * (allocation.unit_selling_price-allocation.unit_cost))
+           FROM fifo_allocation allocation
+           JOIN sales_meter_reading reading ON reading.id=allocation.sales_meter_reading_id
+           WHERE reading.branch_id=$1
+             AND reading.business_date BETWEEN bounds.start_date AND bounds.end_date
+             AND reading.posting_status='POSTED'
+         ),0) AS gross_profit_amount,
+         COALESCE((
+           SELECT SUM(view.liter_variance)
+           FROM meter_reconciliation_view view
+           WHERE view.branch_id=$1
+             AND view.business_date BETWEEN bounds.start_date AND bounds.end_date
+         ),0) AS liter_variance,
+         COALESCE((
+           SELECT SUM(view.cash_variance)
+           FROM meter_reconciliation_view view
+           WHERE view.branch_id=$1
+             AND view.business_date BETWEEN bounds.start_date AND bounds.end_date
+         ),0) AS cash_variance,
+         COALESCE((
+           SELECT COUNT(*)::int
+           FROM meter_reconciliation_view view
+           WHERE view.branch_id=$1
+             AND view.business_date BETWEEN bounds.start_date AND bounds.end_date
+             AND view.reconciliation_status IN ('PENDING','ESCALATED')
+         ),0) AS unresolved_count,
+         COALESCE((
+           SELECT COUNT(*)::int
+           FROM adjustment_suggestion suggestion
+           JOIN stock_opname opname ON opname.id=suggestion.stock_opname_id
+           JOIN stock_unit unit ON unit.id=opname.stock_unit_id
+           WHERE unit.branch_id=$1
+             AND opname.business_date BETWEEN bounds.start_date AND bounds.end_date
+             AND suggestion.status='PENDING'
+         ),0) AS pending_approval_count
+       FROM bounds`,
+      [branchId, businessDate, days],
+    );
+    const row = result.rows[0];
+    if (row === undefined) throw new Error("Range metrics query returned no row.");
+    return {
+      startDate: row.start_date,
+      endDate: row.end_date,
+      salesQty: row.sales_qty,
+      salesAmount: row.sales_amount,
+      cashDepositAmount: row.cash_deposit_amount,
+      grossProfitAmount: row.gross_profit_amount,
+      literVariance: row.liter_variance,
+      cashVariance: row.cash_variance,
+      unresolvedCount: row.unresolved_count,
+      pendingApprovalCount: row.pending_approval_count,
     };
   }
 

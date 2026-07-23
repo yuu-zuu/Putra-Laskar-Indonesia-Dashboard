@@ -217,8 +217,24 @@ export interface DashboardSummary {
   pendingApprovalCount: number;
 }
 
+export interface DashboardRangeSummary {
+  startDate: string;
+  endDate: string;
+  days: number;
+  closingStockQty: number;
+  salesQty: number;
+  salesAmount: number;
+  cashDepositAmount: number;
+  grossProfitAmount: number;
+  literVariance: number;
+  cashVariance: number;
+  unresolvedCount: number;
+  pendingApprovalCount: number;
+}
+
 export interface DashboardResponse {
   summary: DashboardSummary;
+  rangeSummary: DashboardRangeSummary;
   stockUnits: StockUnitSnapshot[];
   trend: TrendPoint[];
   reconciliations: ReconciliationRow[];

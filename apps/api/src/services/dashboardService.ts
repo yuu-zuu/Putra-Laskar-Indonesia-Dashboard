@@ -6,12 +6,13 @@ export class DashboardService {
   constructor(private readonly repository = new DashboardRepository()) {}
 
   async get(branchId: string, businessDate: string, trendDays = 30): Promise<DashboardResponse> {
-    const [branch, stockUnits, reconciliations, trend, metrics, activities] = await Promise.all([
+    const [branch, stockUnits, reconciliations, trend, metrics, rangeMetrics, activities] = await Promise.all([
       this.repository.branch(branchId),
       this.repository.stockUnits(branchId, businessDate),
       this.repository.reconciliations(branchId, businessDate),
       this.repository.trend(branchId, businessDate, trendDays),
       this.repository.financialMetrics(branchId, businessDate),
+      this.repository.rangeMetrics(branchId, businessDate, trendDays),
       this.repository.activities(branchId),
     ]);
     if (branch === null) throw new AppError(404, "BRANCH_NOT_FOUND", "Pangkalan tidak ditemukan.");
@@ -31,6 +32,20 @@ export class DashboardService {
           (row) => row.status === "PENDING" || row.status === "ESCALATED",
         ).length,
         pendingApprovalCount: metrics.pendingApprovalCount,
+      },
+      rangeSummary: {
+        startDate: rangeMetrics.startDate,
+        endDate: rangeMetrics.endDate,
+        days: trendDays,
+        closingStockQty: sum(stockUnits.map((unit) => unit.closingQty)),
+        salesQty: rangeMetrics.salesQty,
+        salesAmount: rangeMetrics.salesAmount,
+        cashDepositAmount: rangeMetrics.cashDepositAmount,
+        grossProfitAmount: rangeMetrics.grossProfitAmount,
+        literVariance: rangeMetrics.literVariance,
+        cashVariance: rangeMetrics.cashVariance,
+        unresolvedCount: rangeMetrics.unresolvedCount,
+        pendingApprovalCount: rangeMetrics.pendingApprovalCount,
       },
       stockUnits,
       trend,

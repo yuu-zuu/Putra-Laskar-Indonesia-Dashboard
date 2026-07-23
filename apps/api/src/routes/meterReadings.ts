@@ -35,7 +35,11 @@ export function registerMeterReadingRoutes(router: Router): void {
       reconciliation_status: "PENDING" | "MATCHED" | "EXPLAINED" | "ESCALATED" | "CLOSED";
       note: string | null;
     }>(
-      `SELECT * FROM meter_reconciliation_view
+      `SELECT id,business_date::text AS business_date,meter_unit_name,stock_unit_name,
+         meter_start,meter_end,meter_reset_offset,meter_sales_qty,posted_sales_qty,
+         expected_sales_amount,cash_deposit_amount,liter_variance,cash_variance,
+         reconciliation_status,note
+       FROM meter_reconciliation_view
        WHERE branch_id = $1
          ${showAll ? "" : "AND business_date = $2::date"}
        ORDER BY business_date DESC, meter_unit_name`,

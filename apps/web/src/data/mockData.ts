@@ -52,6 +52,20 @@ export const mockDashboard: DashboardResponse = {
     unresolvedCount: 1,
     pendingApprovalCount: 2,
   },
+  rangeSummary: {
+    startDate: "2026-07-04",
+    endDate: "2026-07-10",
+    days: 7,
+    closingStockQty: 12_947,
+    salesQty: 26_715,
+    salesAmount: 334_087_500,
+    cashDepositAmount: 334_219_500,
+    grossProfitAmount: 35_711_500,
+    literVariance: -5,
+    cashVariance: 132_000,
+    unresolvedCount: 1,
+    pendingApprovalCount: 2,
+  },
   stockUnits: [
     {
       id: "30000000-0000-0000-0000-000000000001",

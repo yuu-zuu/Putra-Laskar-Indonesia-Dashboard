@@ -73,57 +73,132 @@ export function DashboardPage() {
       ) : null}
       {data === null ? null : (
         <div className="dashboard-grid">
-          <section
-            className="metric-grid"
-            aria-label={l("Indikator utama", "Key indicators", "关键指标")}
-          >
-            <MetricCard
-              label={l("Stock akhir", "Closing stock", "期末库存")}
-              value={formatLiter(data.summary.closingStockQty)}
-              detail={`${data.stockUnits.length} ${l("unit stock aktif", "active stock units", "个活动库存单元")}`}
-              formula={formulas.closingStock}
-            />
-            <MetricCard
-              label={l("Penjualan", "Sales", "销售")}
-              value={formatCurrency(data.summary.salesAmount)}
-              detail={`${formatLiter(data.summary.salesQty)} ${l("terposting", "posted", "已过账")}`}
-              tone="green"
-            />
-            <MetricCard
-              label={l("Setoran kas", "Cash deposit", "现金存款")}
-              value={formatCurrency(data.summary.cashDepositAmount)}
-              detail={`${signed(data.summary.cashVariance, formatCurrency)} ${l("terhadap ekspektasi", "against expected", "相对预期")}`}
-              tone={data.summary.cashVariance < 0 ? "red" : "mauve"}
-              formula={formulas.cashVariance}
-            />
-            <MetricCard
-              label={l("Laba kotor FIFO", "FIFO gross profit", "FIFO 毛利")}
-              value={formatCurrency(data.summary.grossProfitAmount)}
-              detail={l(
-                "Berdasarkan layer biaya aktual",
-                "Based on actual cost layers",
-                "基于实际成本层",
-              )}
-              tone="yellow"
-            />
-            <MetricCard
-              label={l("Selisih liter", "Liter variance", "升数差异")}
-              value={signed(data.summary.literVariance, formatLiter)}
-              detail={
-                data.summary.literVariance === 0
-                  ? l("Meter dan posting cocok", "Meter and posting match", "仪表与过账一致")
-                  : l("Memerlukan rekonsiliasi", "Reconciliation required", "需要对账")
-              }
-              tone={data.summary.literVariance === 0 ? "green" : "red"}
-              formula={formulas.literVariance}
-            />
-            <MetricCard
-              label={l("Pengecualian terbuka", "Open exceptions", "未解决异常")}
-              value={String(data.summary.unresolvedCount + data.summary.pendingApprovalCount)}
-              detail={`${data.summary.unresolvedCount} ${l("rekonsiliasi", "reconciliations", "项对账")} · ${data.summary.pendingApprovalCount} ${l("persetujuan", "approvals", "项审批")}`}
-              tone={data.summary.unresolvedCount > 0 ? "red" : "green"}
-              icon={<Icon name="alert" />}
-            />
+          <section className="dashboard-metric-section">
+            <header className="dashboard-metric-heading">
+              <div>
+                <span>{l("Ringkasan harian", "Daily summary", "每日摘要")}</span>
+                <strong>{formatDate(businessDate)}</strong>
+              </div>
+            </header>
+            <div
+              className="metric-grid"
+              aria-label={l("Indikator harian", "Daily indicators", "每日指标")}
+            >
+              <MetricCard
+                label={l("Stock akhir", "Closing stock", "期末库存")}
+                value={formatLiter(data.summary.closingStockQty)}
+                detail={`${data.stockUnits.length} ${l("unit stock aktif", "active stock units", "个活动库存单元")}`}
+                formula={formulas.closingStock}
+              />
+              <MetricCard
+                label={l("Penjualan", "Sales", "销售")}
+                value={formatCurrency(data.summary.salesAmount)}
+                detail={`${formatLiter(data.summary.salesQty)} ${l("terposting", "posted", "已过账")}`}
+                tone="green"
+              />
+              <MetricCard
+                label={l("Setoran kas", "Cash deposit", "现金存款")}
+                value={formatCurrency(data.summary.cashDepositAmount)}
+                detail={`${signed(data.summary.cashVariance, formatCurrency)} ${l("terhadap ekspektasi", "against expected", "相对预期")}`}
+                tone={data.summary.cashVariance < 0 ? "red" : "mauve"}
+                formula={formulas.cashVariance}
+              />
+              <MetricCard
+                label={l("Laba kotor FIFO", "FIFO gross profit", "FIFO 毛利")}
+                value={formatCurrency(data.summary.grossProfitAmount)}
+                detail={l(
+                  "Berdasarkan layer biaya aktual",
+                  "Based on actual cost layers",
+                  "基于实际成本层",
+                )}
+                tone="yellow"
+              />
+              <MetricCard
+                label={l("Selisih liter", "Liter variance", "升数差异")}
+                value={signed(data.summary.literVariance, formatLiter)}
+                detail={
+                  data.summary.literVariance === 0
+                    ? l("Meter dan posting cocok", "Meter and posting match", "仪表与过账一致")
+                    : l("Memerlukan rekonsiliasi", "Reconciliation required", "需要对账")
+                }
+                tone={data.summary.literVariance === 0 ? "green" : "red"}
+                formula={formulas.literVariance}
+              />
+              <MetricCard
+                label={l("Pengecualian terbuka", "Open exceptions", "未解决异常")}
+                value={String(data.summary.unresolvedCount + data.summary.pendingApprovalCount)}
+                detail={`${data.summary.unresolvedCount} ${l("rekonsiliasi", "reconciliations", "项对账")} · ${data.summary.pendingApprovalCount} ${l("persetujuan", "approvals", "项审批")}`}
+                tone={data.summary.unresolvedCount > 0 ? "red" : "green"}
+                icon={<Icon name="alert" />}
+              />
+            </div>
+          </section>
+
+          <section className="dashboard-metric-section dashboard-range-summary">
+            <header className="dashboard-metric-heading">
+              <div>
+                <span>
+                  {l(
+                    `Ringkasan ${trendDays} hari`,
+                    `${trendDays}-day summary`,
+                    `${trendDays} 天摘要`,
+                  )}
+                </span>
+                <strong>
+                  {formatDate(data.rangeSummary.startDate)} – {formatDate(data.rangeSummary.endDate)}
+                </strong>
+              </div>
+            </header>
+            <div
+              className="metric-grid"
+              aria-label={l("Indikator rentang tren", "Trend-range indicators", "趋势范围指标")}
+            >
+              <MetricCard
+                label={l("Stock akhir periode", "Period closing stock", "期间期末库存")}
+                value={formatLiter(data.rangeSummary.closingStockQty)}
+                detail={l("Saldo pada akhir rentang", "Balance at range end", "范围结束时余额")}
+                formula={formulas.closingStock}
+              />
+              <MetricCard
+                label={l("Penjualan periode", "Period sales", "期间销售")}
+                value={formatCurrency(data.rangeSummary.salesAmount)}
+                detail={`${formatLiter(data.rangeSummary.salesQty)} ${l("selama rentang", "during range", "范围内")}`}
+                tone="green"
+              />
+              <MetricCard
+                label={l("Setoran periode", "Period deposits", "期间存款")}
+                value={formatCurrency(data.rangeSummary.cashDepositAmount)}
+                detail={`${signed(data.rangeSummary.cashVariance, formatCurrency)} ${l("terhadap ekspektasi", "against expected", "相对预期")}`}
+                tone={data.rangeSummary.cashVariance < 0 ? "red" : "mauve"}
+                formula={formulas.cashVariance}
+              />
+              <MetricCard
+                label={l("Laba FIFO periode", "Period FIFO profit", "期间 FIFO 利润")}
+                value={formatCurrency(data.rangeSummary.grossProfitAmount)}
+                detail={l(
+                  "Nilai sementara bila HPP belum lengkap",
+                  "Provisional while costs are incomplete",
+                  "成本不完整时为暂定值",
+                )}
+                tone="yellow"
+              />
+              <MetricCard
+                label={l("Selisih liter periode", "Period liter variance", "期间升数差异")}
+                value={signed(data.rangeSummary.literVariance, formatLiter)}
+                detail={l("Akumulasi dalam rentang", "Accumulated within range", "范围内累计")}
+                tone={data.rangeSummary.literVariance === 0 ? "green" : "red"}
+                formula={formulas.literVariance}
+              />
+              <MetricCard
+                label={l("Tindak lanjut periode", "Period follow-up", "期间跟进")}
+                value={String(
+                  data.rangeSummary.unresolvedCount + data.rangeSummary.pendingApprovalCount,
+                )}
+                detail={`${data.rangeSummary.unresolvedCount} ${l("rekonsiliasi", "reconciliations", "项对账")} · ${data.rangeSummary.pendingApprovalCount} ${l("persetujuan", "approvals", "项审批")}`}
+                tone={data.rangeSummary.unresolvedCount > 0 ? "red" : "green"}
+                icon={<Icon name="alert" />}
+              />
+            </div>
           </section>
 
           <Panel

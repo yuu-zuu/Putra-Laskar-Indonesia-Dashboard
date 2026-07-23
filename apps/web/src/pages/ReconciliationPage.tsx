@@ -128,25 +128,26 @@ export function ReconciliationPage() {
         title={t("recon.title")}
         description={t("recon.description")}
         actions={
-          <>
-            <label className="date-filter">
-              <span>{l("Tanggal", "Date", "日期")}</span>
-              <input
-                type="date"
-                value={date}
-                disabled={showAll}
-                onChange={(event) => setDate(event.target.value)}
-              />
-            </label>
-            <label className="inline-filter">
-              <input
-                className="row-checkbox"
-                type="checkbox"
-                checked={showAll}
-                onChange={(event) => setShowAll(event.target.checked)}
-              />
-              <span>{l("Tampilkan semua", "Show all", "显示全部")}</span>
-            </label>
+          <div className="reconciliation-actions">
+            <div className="reconciliation-filter-stack">
+              <label className="toggle-filter">
+                <span>{l("Tampilkan semua", "Show all", "显示全部")}</span>
+                <input
+                  type="checkbox"
+                  checked={showAll}
+                  onChange={(event) => setShowAll(event.target.checked)}
+                />
+              </label>
+              <label className="date-filter">
+                <span>{l("Tanggal", "Date", "日期")}</span>
+                <input
+                  type="date"
+                  value={date}
+                  disabled={showAll}
+                  onChange={(event) => setDate(event.target.value)}
+                />
+              </label>
+            </div>
             <button
               className="button button-primary"
               disabled={!rows.length || (showAll && selected.size === 0)}
@@ -163,7 +164,7 @@ export function ReconciliationPage() {
             >
               {l("Tinjau", "Review", "审核")} {selected.size || (showAll ? 0 : "batch")}
             </button>
-          </>
+          </div>
         }
       />
       <section className="mini-metric-grid">

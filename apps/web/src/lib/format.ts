@@ -31,11 +31,16 @@ export function formatPercent(value: number): string {
   );
 }
 export function formatDate(value: string): string {
+  const normalized = /^\d{4}-\d{2}-\d{2}/.exec(value)?.[0] ?? value;
+  const parsed = /^\d{4}-\d{2}-\d{2}$/.test(normalized)
+    ? new Date(`${normalized}T00:00:00+07:00`)
+    : new Date(normalized);
+  if (!Number.isFinite(parsed.getTime())) return value;
   return new Intl.DateTimeFormat(locale, {
     day: "2-digit",
     month: "short",
     year: "numeric",
-  }).format(new Date(`${value}T00:00:00+07:00`));
+  }).format(parsed);
 }
 export function formatDateTime(value: string): string {
   return new Intl.DateTimeFormat(locale, {
