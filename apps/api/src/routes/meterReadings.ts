@@ -16,7 +16,8 @@ export function registerMeterReadingRoutes(router: Router): void {
     const user = await requireUser(request);
     const branchId = queryParam(url, "branchId") as string;
     assertBranch(user.role, user.branchId, branchId);
-    const date = queryParam(url, "date") as string;
+    const showAll = queryParam(url, "all", false) === "true";
+    const date = queryParam(url, "date", !showAll);
     const result = await pool.query<{
       id: string;
       business_date: string;
@@ -35,9 +36,10 @@ export function registerMeterReadingRoutes(router: Router): void {
       note: string | null;
     }>(
       `SELECT * FROM meter_reconciliation_view
-       WHERE branch_id = $1 AND business_date = $2::date
-       ORDER BY meter_unit_name`,
-      [branchId, date],
+       WHERE branch_id = $1
+         ${showAll ? "" : "AND business_date = $2::date"}
+       ORDER BY business_date DESC, meter_unit_name`,
+      showAll ? [branchId] : [branchId, date],
     );
     sendJson(response, 200, {
       items: result.rows.map((row) => ({

@@ -10,12 +10,16 @@ import type {
 import { apiRequest } from "../lib/http.js";
 import { isMockMode } from "./gateway.js";
 import { createClientId } from "../lib/id.js";
-export async function getReadings(branchId: string, date: string): Promise<ReconciliationRow[]> {
+export async function getReadings(
+  branchId: string,
+  date: string | null,
+): Promise<ReconciliationRow[]> {
   if (isMockMode()) return [];
+  const search = new URLSearchParams({ branchId });
+  if (date === null) search.set("all", "true");
+  else search.set("date", date);
   return (
-    await apiRequest<{ items: ReconciliationRow[] }>(
-      `/sales/meter-readings?branchId=${encodeURIComponent(branchId)}&date=${date}`,
-    )
+    await apiRequest<{ items: ReconciliationRow[] }>(`/sales/meter-readings?${search.toString()}`)
   ).items;
 }
 export async function updateReconciliation(

@@ -19,10 +19,11 @@ import {
   correctReconciliation,
   getReconciliationComments,
   getReconciliationHistory,
+  getReadings,
   updateReconciliation,
 } from "../data/operationsGateway.js";
 import { useDashboard } from "../hooks/useDashboard.js";
-import { formatCurrency, formatDateTime, formatLiter, signed } from "../lib/format.js";
+import { formatCurrency, formatDate, formatDateTime, formatLiter, signed } from "../lib/format.js";
 type Filter = "ALL" | ReconciliationStatus;
 export function ReconciliationPage() {
   const { user } = useAuth();
@@ -30,17 +31,61 @@ export function ReconciliationPage() {
   const { t, l } = useI18n();
   const toast = useToast();
   const [date, setDate] = useState(new Date().toISOString().slice(0, 10));
-  const { data, reload } = useDashboard(activeBranch?.id ?? "", date);
+  const [showAll, setShowAll] = useState(false);
+  const { data, reload } = useDashboard(showAll ? "" : (activeBranch?.id ?? ""), date);
+  const [allRows, setAllRows] = useState<ReconciliationRow[]>([]);
+  const [allRowsLoading, setAllRowsLoading] = useState(false);
+  const [allRowsError, setAllRowsError] = useState<string | null>(null);
+  const [allRowsRevision, setAllRowsRevision] = useState(0);
   const [status, setStatus] = useState<Filter>("ALL");
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [review, setReview] = useState(false);
   const [detail, setDetail] = useState<ReconciliationRow | null>(null);
   const [nextStatus, setNextStatus] = useState<ReconciliationStatus>("EXPLAINED");
   const [note, setNote] = useState("");
+  useEffect(() => {
+    if (!showAll || !activeBranch?.id) {
+      setAllRows([]);
+      setAllRowsLoading(false);
+      setAllRowsError(null);
+      return;
+    }
+    let cancelled = false;
+    setAllRowsLoading(true);
+    setAllRowsError(null);
+    void getReadings(activeBranch.id, null)
+      .then((items) => {
+        if (!cancelled) setAllRows(items);
+      })
+      .catch((error: unknown) => {
+        if (!cancelled) {
+          setAllRows([]);
+          setAllRowsError(
+            error instanceof Error
+              ? error.message
+              : l("Rekonsiliasi gagal dimuat.", "Could not load reconciliations.", "无法加载对账记录。"),
+          );
+        }
+      })
+      .finally(() => {
+        if (!cancelled) setAllRowsLoading(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [activeBranch?.id, allRowsRevision, l, showAll]);
+  useEffect(() => {
+    setSelected(new Set());
+  }, [activeBranch?.id, date, showAll, status]);
+  const sourceRows = showAll ? allRows : (data?.reconciliations ?? []);
   const rows = useMemo(
-    () => (data?.reconciliations ?? []).filter((row) => status === "ALL" || row.status === status),
-    [data, status],
+    () => sourceRows.filter((row) => status === "ALL" || row.status === status),
+    [sourceRows, status],
   );
+  const reloadRows = () => {
+    if (showAll) setAllRowsRevision((value) => value + 1);
+    else reload();
+  };
   const absoluteLiter = rows.reduce((sum, row) => sum + Math.abs(row.literVariance), 0),
     absoluteCash = rows.reduce((sum, row) => sum + Math.abs(row.cashVariance), 0);
   const toggle = (id: string) =>
@@ -66,7 +111,7 @@ export function ReconciliationPage() {
       );
       setSelected(new Set());
       setReview(false);
-      reload();
+      reloadRows();
     } catch (error) {
       toast(
         error instanceof Error
@@ -86,10 +131,37 @@ export function ReconciliationPage() {
           <>
             <label className="date-filter">
               <span>{l("Tanggal", "Date", "日期")}</span>
-              <input type="date" value={date} onChange={(event) => setDate(event.target.value)} />
+              <input
+                type="date"
+                value={date}
+                disabled={showAll}
+                onChange={(event) => setDate(event.target.value)}
+              />
             </label>
-            <button className="button button-primary" onClick={() => setReview(true)}>
-              {l("Tinjau", "Review", "审核")} {selected.size || "batch"}
+            <label className="inline-filter">
+              <input
+                className="row-checkbox"
+                type="checkbox"
+                checked={showAll}
+                onChange={(event) => setShowAll(event.target.checked)}
+              />
+              <span>{l("Tampilkan semua", "Show all", "显示全部")}</span>
+            </label>
+            <button
+              className="button button-primary"
+              disabled={!rows.length || (showAll && selected.size === 0)}
+              title={
+                showAll && selected.size === 0
+                  ? l(
+                      "Pilih minimal satu baris saat menampilkan semua tanggal.",
+                      "Select at least one row when showing all dates.",
+                      "显示全部日期时请至少选择一行。",
+                    )
+                  : undefined
+              }
+              onClick={() => setReview(true)}
+            >
+              {l("Tinjau", "Review", "审核")} {selected.size || (showAll ? 0 : "batch")}
             </button>
           </>
         }
@@ -125,7 +197,7 @@ export function ReconciliationPage() {
           "Meter and posting comparison",
           "仪表与过账比较",
         )}
-        eyebrow={date}
+        eyebrow={showAll ? l("Semua tanggal", "All dates", "全部日期") : date}
         action={
           <label className="inline-filter">
             <span>{l("Status", "Status", "状态")}</span>
@@ -147,6 +219,7 @@ export function ReconciliationPage() {
                 <th className="select-column">
                   <span className="sr-only">{l("Pilih", "Select", "选择")}</span>
                 </th>
+                {showAll ? <th>{l("Tanggal", "Date", "日期")}</th> : null}
                 <th>{l("Meter / unit", "Meter / unit", "仪表 / 单元")}</th>
                 <th>{l("Meter", "Meter", "仪表")}</th>
                 <th>{l("Posting", "Posting", "过账")}</th>
@@ -170,6 +243,7 @@ export function ReconciliationPage() {
                       onChange={() => toggle(row.id)}
                     />
                   </td>
+                  {showAll ? <td>{formatDate(row.businessDate)}</td> : null}
                   <th>
                     <strong>{row.meterUnitName}</strong>
                     <small>{row.stockUnitName}</small>
@@ -198,12 +272,20 @@ export function ReconciliationPage() {
             </tbody>
           </table>
         </div>
-        {!rows.length ? (
+        {showAll && allRowsLoading ? (
+          <p className="empty-state">{l("Memuat semua tanggal…", "Loading all dates…", "正在加载全部日期…")}</p>
+        ) : null}
+        {showAll && allRowsError ? <p className="empty-state value-danger">{allRowsError}</p> : null}
+        {!allRowsLoading && !allRowsError && !rows.length ? (
           <p className="empty-state">
             {l(
-              "Belum ada bacaan untuk tanggal dan filter ini.",
-              "No readings match this date and filter.",
-              "该日期和筛选条件下暂无读数。",
+              showAll
+                ? "Belum ada bacaan untuk filter ini."
+                : "Belum ada bacaan untuk tanggal dan filter ini.",
+              showAll
+                ? "No readings match this filter."
+                : "No readings match this date and filter.",
+              showAll ? "该筛选条件下暂无读数。" : "该日期和筛选条件下暂无读数。",
             )}
           </p>
         ) : null}
@@ -227,7 +309,7 @@ export function ReconciliationPage() {
           }
           close={() => setDetail(null)}
           changed={() => {
-            reload();
+            reloadRows();
           }}
         />
       ) : null}
