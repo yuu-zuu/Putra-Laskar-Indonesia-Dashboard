@@ -28,6 +28,8 @@
     "db:verify": "npm run db:verify --workspace @spbu/api",
     "db:verify-account-assignment": "npm run db:verify-account-assignment --workspace @spbu/api",
     "db:seed": "npm run db:seed --workspace @spbu/api",
+    "db:import-historical": "npm run db:import-historical --workspace @spbu/api --",
+    "db:stage-historical-source": "npm run db:stage-historical-source --workspace @spbu/api --",
     "auth:bootstrap-admin": "npm run auth:bootstrap-admin --workspace @spbu/api"
   },
   "engines": {

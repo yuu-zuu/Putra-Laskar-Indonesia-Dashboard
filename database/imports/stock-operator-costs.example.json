@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "branchCode": "PBL",
+      "stockUnitCode": "*",
+      "validFrom": "2026-03-01",
+      "validTo": "2026-07-15",
+      "unitCost": null,
+      "unitSellingPrice": null,
+      "note": "Ganti dengan harga pokok per liter. Tambahkan rule baru ketika harga pokok berubah."
+    },
+    {
+      "branchCode": "SKY",
+      "stockUnitCode": "*",
+      "validFrom": "2026-03-01",
+      "validTo": "2026-07-15",
+      "unitCost": null,
+      "unitSellingPrice": null,
+      "note": "Ganti dengan harga pokok per liter."
+    },
+    {
+      "branchCode": "RCK",
+      "stockUnitCode": "*",
+      "validFrom": "2026-03-01",
+      "validTo": "2026-07-15",
+      "unitCost": null,
+      "unitSellingPrice": null,
+      "note": "Ganti dengan harga pokok per liter. RCK/POMPA-BELAKANG juga memerlukan harga jual karena belum memiliki bacaan meter."
+    }
+  ]
+}

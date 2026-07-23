@@ -1,0 +1,69 @@
+{
+  "version": 2,
+  "product": {
+    "code": "BBM",
+    "name": "BBM",
+    "unit": "LITER"
+  },
+  "capacityPolicy": {
+    "roundingStepQty": 1000,
+    "minimumCapacityQty": 1000
+  },
+  "defaultLowStockThresholdQty": 0,
+  "units": [
+    {
+      "sourceBranchCode": "PBL",
+      "existingBranchName": "PANGKALAN BALAI - 2P309374",
+      "stockUnitCode": "POMPA-DEPAN",
+      "stockUnitName": "Pompa Depan",
+      "meterUnitCode": "METER-DEPAN",
+      "meterUnitName": "Meter Pompa Depan",
+      "capacityQty": null
+    },
+    {
+      "sourceBranchCode": "PBL",
+      "existingBranchName": "PANGKALAN BALAI - 2P309374",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "stockUnitName": "Pompa Belakang",
+      "meterUnitCode": "METER-BELAKANG",
+      "meterUnitName": "Meter Pompa Belakang",
+      "capacityQty": null
+    },
+    {
+      "sourceBranchCode": "SKY",
+      "existingBranchName": "SEKAYU - 2P307376",
+      "stockUnitCode": "POMPA-DEPAN",
+      "stockUnitName": "Pompa Depan",
+      "meterUnitCode": "METER-DEPAN",
+      "meterUnitName": "Meter Pompa Depan",
+      "capacityQty": null
+    },
+    {
+      "sourceBranchCode": "SKY",
+      "existingBranchName": "SEKAYU - 2P307376",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "stockUnitName": "Pompa Belakang",
+      "meterUnitCode": "METER-BELAKANG",
+      "meterUnitName": "Meter Pompa Belakang",
+      "capacityQty": null
+    },
+    {
+      "sourceBranchCode": "RCK",
+      "existingBranchName": "RANCAEKEK - 3P40312",
+      "stockUnitCode": "POMPA-DEPAN",
+      "stockUnitName": "Pompa Depan",
+      "meterUnitCode": "METER-DEPAN",
+      "meterUnitName": "Meter Pompa Depan",
+      "capacityQty": null
+    },
+    {
+      "sourceBranchCode": "RCK",
+      "existingBranchName": "RANCAEKEK - 3P40312",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "stockUnitName": "Pompa Belakang",
+      "meterUnitCode": "METER-BELAKANG",
+      "meterUnitName": "Meter Pompa Belakang",
+      "capacityQty": null
+    }
+  ]
+}

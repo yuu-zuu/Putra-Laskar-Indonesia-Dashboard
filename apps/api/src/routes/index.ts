@@ -1,5 +1,6 @@
 import type { Router } from "../http/router.js";
 import { registerDashboardRoutes } from "./dashboard.js";
+import { registerCostReconciliationRoutes } from "./costReconciliation.js";
 import { registerHealthRoutes } from "./health.js";
 import { registerMasterRoutes } from "./masters.js";
 import { registerMeterReadingRoutes } from "./meterReadings.js";
@@ -24,6 +25,7 @@ export function registerRoutes(router: Router): void {
   registerReportRoutes(router);
   registerOperationRoutes(router);
   registerReconciliationRoutes(router);
+  registerCostReconciliationRoutes(router);
   registerAuditRoutes(router);
   registerProfileRoutes(router);
   registerUploadRoutes(router);

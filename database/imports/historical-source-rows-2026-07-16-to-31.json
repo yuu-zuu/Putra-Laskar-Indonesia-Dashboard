@@ -1,0 +1,4968 @@
+{
+  "version": 1,
+  "name": "Stock operator source rows requiring completion, July 16-31 2026",
+  "timezone": "Asia/Jakarta",
+  "generatedAt": "2026-07-23T00:00:00+07:00",
+  "sourceFiles": [
+    {
+      "name": "Laporan Stock Operator Juli 2026.xlsx",
+      "sha256": "cc6695a681e9a0d4ba4030f677f4163c754aff9e85017875845f3c968e71b1bc"
+    }
+  ],
+  "counts": {
+    "rows": 96,
+    "incompleteSource": 48,
+    "futureTemplate": 48
+  },
+  "policy": {
+    "preserveRawRows": true,
+    "postDerivedValues": false,
+    "completionRule": "Post only after factual meter end/cash/stock values are verified for the original business date."
+  },
+  "rows": [
+    {
+      "key": "PBL:POMPA-DEPAN:2026-07-16:DAILY",
+      "branchCode": "PBL",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-16",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 226.55999999999995,
+        "inboundQty": 0,
+        "totalQty": 226.55999999999995,
+        "meterStart": 298026,
+        "meterEnd": null,
+        "displayedSalesQty": -298026,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": -4932330300,
+        "displayedClosingQty": 298252.56,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Pangkalan balai",
+        "row": 254
+      }
+    },
+    {
+      "key": "PBL:POMPA-DEPAN:2026-07-17:DAILY",
+      "branchCode": "PBL",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-17",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 298252.56,
+        "inboundQty": 0,
+        "totalQty": 298252.56,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 298252.56,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Pangkalan balai",
+        "row": 255
+      }
+    },
+    {
+      "key": "PBL:POMPA-DEPAN:2026-07-18:DAILY",
+      "branchCode": "PBL",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-18",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 298252.56,
+        "inboundQty": 0,
+        "totalQty": 298252.56,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 298252.56,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Pangkalan balai",
+        "row": 256
+      }
+    },
+    {
+      "key": "PBL:POMPA-DEPAN:2026-07-19:DAILY",
+      "branchCode": "PBL",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-19",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 298252.56,
+        "inboundQty": 0,
+        "totalQty": 298252.56,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 298252.56,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Pangkalan balai",
+        "row": 257
+      }
+    },
+    {
+      "key": "PBL:POMPA-DEPAN:2026-07-20:DAILY",
+      "branchCode": "PBL",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-20",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 298252.56,
+        "inboundQty": 0,
+        "totalQty": 298252.56,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 298252.56,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Pangkalan balai",
+        "row": 258
+      }
+    },
+    {
+      "key": "PBL:POMPA-DEPAN:2026-07-21:DAILY",
+      "branchCode": "PBL",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-21",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 298252.56,
+        "inboundQty": 0,
+        "totalQty": 298252.56,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 298252.56,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Pangkalan balai",
+        "row": 259
+      }
+    },
+    {
+      "key": "PBL:POMPA-DEPAN:2026-07-22:DAILY",
+      "branchCode": "PBL",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-22",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 298252.56,
+        "inboundQty": 0,
+        "totalQty": 298252.56,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 298252.56,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Pangkalan balai",
+        "row": 260
+      }
+    },
+    {
+      "key": "PBL:POMPA-DEPAN:2026-07-23:DAILY",
+      "branchCode": "PBL",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-23",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 298252.56,
+        "inboundQty": 0,
+        "totalQty": 298252.56,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 298252.56,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Pangkalan balai",
+        "row": 261
+      }
+    },
+    {
+      "key": "PBL:POMPA-DEPAN:2026-07-24:DAILY",
+      "branchCode": "PBL",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-24",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 298252.56,
+        "inboundQty": 0,
+        "totalQty": 298252.56,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 298252.56,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Pangkalan balai",
+        "row": 262
+      }
+    },
+    {
+      "key": "PBL:POMPA-DEPAN:2026-07-25:DAILY",
+      "branchCode": "PBL",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-25",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 298252.56,
+        "inboundQty": 0,
+        "totalQty": 298252.56,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 298252.56,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Pangkalan balai",
+        "row": 263
+      }
+    },
+    {
+      "key": "PBL:POMPA-DEPAN:2026-07-26:DAILY",
+      "branchCode": "PBL",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-26",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 298252.56,
+        "inboundQty": 0,
+        "totalQty": 298252.56,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 298252.56,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Pangkalan balai",
+        "row": 264
+      }
+    },
+    {
+      "key": "PBL:POMPA-DEPAN:2026-07-27:DAILY",
+      "branchCode": "PBL",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-27",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 298252.56,
+        "inboundQty": 0,
+        "totalQty": 298252.56,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 298252.56,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Pangkalan balai",
+        "row": 265
+      }
+    },
+    {
+      "key": "PBL:POMPA-DEPAN:2026-07-28:DAILY",
+      "branchCode": "PBL",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-28",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 298252.56,
+        "inboundQty": 0,
+        "totalQty": 298252.56,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 298252.56,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Pangkalan balai",
+        "row": 266
+      }
+    },
+    {
+      "key": "PBL:POMPA-DEPAN:2026-07-29:DAILY",
+      "branchCode": "PBL",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-29",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 298252.56,
+        "inboundQty": 0,
+        "totalQty": 298252.56,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 298252.56,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Pangkalan balai",
+        "row": 267
+      }
+    },
+    {
+      "key": "PBL:POMPA-DEPAN:2026-07-30:DAILY",
+      "branchCode": "PBL",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-30",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 298252.56,
+        "inboundQty": 0,
+        "totalQty": 298252.56,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 298252.56,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Pangkalan balai",
+        "row": 268
+      }
+    },
+    {
+      "key": "PBL:POMPA-DEPAN:2026-07-31:DAILY",
+      "branchCode": "PBL",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-31",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 298252.56,
+        "inboundQty": 0,
+        "totalQty": 298252.56,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 298252.56,
+        "soundingValue": null,
+        "physicalQty": 0,
+        "displayedVarianceQty": -298252.56,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Pangkalan balai",
+        "row": 269
+      }
+    },
+    {
+      "key": "PBL:POMPA-BELAKANG:2026-07-16:DAILY",
+      "branchCode": "PBL",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-16",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 3036.85,
+        "inboundQty": 0,
+        "totalQty": 3036.85,
+        "meterStart": 312062,
+        "meterEnd": null,
+        "displayedSalesQty": -312062,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": -5164626100,
+        "displayedClosingQty": 315098.85,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Pangkalan balai",
+        "row": 289
+      }
+    },
+    {
+      "key": "PBL:POMPA-BELAKANG:2026-07-17:DAILY",
+      "branchCode": "PBL",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-17",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 315098.85,
+        "inboundQty": 0,
+        "totalQty": 315098.85,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 315098.85,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Pangkalan balai",
+        "row": 290
+      }
+    },
+    {
+      "key": "PBL:POMPA-BELAKANG:2026-07-18:DAILY",
+      "branchCode": "PBL",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-18",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 315098.85,
+        "inboundQty": 0,
+        "totalQty": 315098.85,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 315098.85,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Pangkalan balai",
+        "row": 291
+      }
+    },
+    {
+      "key": "PBL:POMPA-BELAKANG:2026-07-19:DAILY",
+      "branchCode": "PBL",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-19",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 315098.85,
+        "inboundQty": 0,
+        "totalQty": 315098.85,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 315098.85,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Pangkalan balai",
+        "row": 292
+      }
+    },
+    {
+      "key": "PBL:POMPA-BELAKANG:2026-07-20:DAILY",
+      "branchCode": "PBL",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-20",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 315098.85,
+        "inboundQty": 0,
+        "totalQty": 315098.85,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 315098.85,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Pangkalan balai",
+        "row": 293
+      }
+    },
+    {
+      "key": "PBL:POMPA-BELAKANG:2026-07-21:DAILY",
+      "branchCode": "PBL",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-21",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 315098.85,
+        "inboundQty": 0,
+        "totalQty": 315098.85,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 315098.85,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Pangkalan balai",
+        "row": 294
+      }
+    },
+    {
+      "key": "PBL:POMPA-BELAKANG:2026-07-22:DAILY",
+      "branchCode": "PBL",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-22",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 315098.85,
+        "inboundQty": 0,
+        "totalQty": 315098.85,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 315098.85,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Pangkalan balai",
+        "row": 295
+      }
+    },
+    {
+      "key": "PBL:POMPA-BELAKANG:2026-07-23:DAILY",
+      "branchCode": "PBL",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-23",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 315098.85,
+        "inboundQty": 0,
+        "totalQty": 315098.85,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 315098.85,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Pangkalan balai",
+        "row": 296
+      }
+    },
+    {
+      "key": "PBL:POMPA-BELAKANG:2026-07-24:DAILY",
+      "branchCode": "PBL",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-24",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 315098.85,
+        "inboundQty": 0,
+        "totalQty": 315098.85,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 315098.85,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Pangkalan balai",
+        "row": 297
+      }
+    },
+    {
+      "key": "PBL:POMPA-BELAKANG:2026-07-25:DAILY",
+      "branchCode": "PBL",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-25",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 315098.85,
+        "inboundQty": 0,
+        "totalQty": 315098.85,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 315098.85,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Pangkalan balai",
+        "row": 298
+      }
+    },
+    {
+      "key": "PBL:POMPA-BELAKANG:2026-07-26:DAILY",
+      "branchCode": "PBL",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-26",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 315098.85,
+        "inboundQty": 0,
+        "totalQty": 315098.85,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 315098.85,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Pangkalan balai",
+        "row": 299
+      }
+    },
+    {
+      "key": "PBL:POMPA-BELAKANG:2026-07-27:DAILY",
+      "branchCode": "PBL",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-27",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 315098.85,
+        "inboundQty": 0,
+        "totalQty": 315098.85,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 315098.85,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Pangkalan balai",
+        "row": 300
+      }
+    },
+    {
+      "key": "PBL:POMPA-BELAKANG:2026-07-28:DAILY",
+      "branchCode": "PBL",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-28",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 315098.85,
+        "inboundQty": 0,
+        "totalQty": 315098.85,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 315098.85,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Pangkalan balai",
+        "row": 301
+      }
+    },
+    {
+      "key": "PBL:POMPA-BELAKANG:2026-07-29:DAILY",
+      "branchCode": "PBL",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-29",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 315098.85,
+        "inboundQty": 0,
+        "totalQty": 315098.85,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 315098.85,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Pangkalan balai",
+        "row": 302
+      }
+    },
+    {
+      "key": "PBL:POMPA-BELAKANG:2026-07-30:DAILY",
+      "branchCode": "PBL",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-30",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 315098.85,
+        "inboundQty": 0,
+        "totalQty": 315098.85,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 315098.85,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Pangkalan balai",
+        "row": 303
+      }
+    },
+    {
+      "key": "PBL:POMPA-BELAKANG:2026-07-31:DAILY",
+      "branchCode": "PBL",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-31",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 315098.85,
+        "inboundQty": 0,
+        "totalQty": 315098.85,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 315098.85,
+        "soundingValue": null,
+        "physicalQty": 0,
+        "displayedVarianceQty": -315098.85,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Pangkalan balai",
+        "row": 304
+      }
+    },
+    {
+      "key": "SKY:POMPA-DEPAN:2026-07-16:DAILY",
+      "branchCode": "SKY",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-16",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 1597.9999999999995,
+        "inboundQty": 0,
+        "totalQty": 1597.9999999999995,
+        "meterStart": 69867,
+        "meterEnd": null,
+        "displayedSalesQty": -69867,
+        "salesReturnQty": 2,
+        "displayedCashDepositAmount": -1156331950,
+        "displayedClosingQty": 71467,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Sekayu",
+        "row": 252
+      }
+    },
+    {
+      "key": "SKY:POMPA-DEPAN:2026-07-17:DAILY",
+      "branchCode": "SKY",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-17",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 71467,
+        "inboundQty": 0,
+        "totalQty": 71467,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 71467,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Sekayu",
+        "row": 253
+      }
+    },
+    {
+      "key": "SKY:POMPA-DEPAN:2026-07-18:DAILY",
+      "branchCode": "SKY",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-18",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 71467,
+        "inboundQty": 0,
+        "totalQty": 71467,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 71467,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Sekayu",
+        "row": 254
+      }
+    },
+    {
+      "key": "SKY:POMPA-DEPAN:2026-07-19:DAILY",
+      "branchCode": "SKY",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-19",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 71467,
+        "inboundQty": 0,
+        "totalQty": 71467,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 71467,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Sekayu",
+        "row": 255
+      }
+    },
+    {
+      "key": "SKY:POMPA-DEPAN:2026-07-20:DAILY",
+      "branchCode": "SKY",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-20",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 71467,
+        "inboundQty": 0,
+        "totalQty": 71467,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 71467,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Sekayu",
+        "row": 256
+      }
+    },
+    {
+      "key": "SKY:POMPA-DEPAN:2026-07-21:DAILY",
+      "branchCode": "SKY",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-21",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 71467,
+        "inboundQty": 0,
+        "totalQty": 71467,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 71467,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Sekayu",
+        "row": 257
+      }
+    },
+    {
+      "key": "SKY:POMPA-DEPAN:2026-07-22:DAILY",
+      "branchCode": "SKY",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-22",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 71467,
+        "inboundQty": 0,
+        "totalQty": 71467,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 71467,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Sekayu",
+        "row": 258
+      }
+    },
+    {
+      "key": "SKY:POMPA-DEPAN:2026-07-23:DAILY",
+      "branchCode": "SKY",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-23",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 71467,
+        "inboundQty": 0,
+        "totalQty": 71467,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 71467,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Sekayu",
+        "row": 259
+      }
+    },
+    {
+      "key": "SKY:POMPA-DEPAN:2026-07-24:DAILY",
+      "branchCode": "SKY",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-24",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 71467,
+        "inboundQty": 0,
+        "totalQty": 71467,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 71467,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Sekayu",
+        "row": 260
+      }
+    },
+    {
+      "key": "SKY:POMPA-DEPAN:2026-07-25:DAILY",
+      "branchCode": "SKY",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-25",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 71467,
+        "inboundQty": 0,
+        "totalQty": 71467,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 71467,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Sekayu",
+        "row": 261
+      }
+    },
+    {
+      "key": "SKY:POMPA-DEPAN:2026-07-26:DAILY",
+      "branchCode": "SKY",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-26",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 71467,
+        "inboundQty": 0,
+        "totalQty": 71467,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 71467,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Sekayu",
+        "row": 262
+      }
+    },
+    {
+      "key": "SKY:POMPA-DEPAN:2026-07-27:DAILY",
+      "branchCode": "SKY",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-27",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 71467,
+        "inboundQty": 0,
+        "totalQty": 71467,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 71467,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Sekayu",
+        "row": 263
+      }
+    },
+    {
+      "key": "SKY:POMPA-DEPAN:2026-07-28:DAILY",
+      "branchCode": "SKY",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-28",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 71467,
+        "inboundQty": 0,
+        "totalQty": 71467,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 71467,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Sekayu",
+        "row": 264
+      }
+    },
+    {
+      "key": "SKY:POMPA-DEPAN:2026-07-29:DAILY",
+      "branchCode": "SKY",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-29",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 71467,
+        "inboundQty": 0,
+        "totalQty": 71467,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 71467,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Sekayu",
+        "row": 265
+      }
+    },
+    {
+      "key": "SKY:POMPA-DEPAN:2026-07-30:DAILY",
+      "branchCode": "SKY",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-30",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 71467,
+        "inboundQty": 0,
+        "totalQty": 71467,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 71467,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Sekayu",
+        "row": 266
+      }
+    },
+    {
+      "key": "SKY:POMPA-DEPAN:2026-07-31:DAILY",
+      "branchCode": "SKY",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-31",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 71467,
+        "inboundQty": 0,
+        "totalQty": 71467,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 71467,
+        "soundingValue": null,
+        "physicalQty": 0,
+        "displayedVarianceQty": "-",
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Sekayu",
+        "row": 267
+      }
+    },
+    {
+      "key": "SKY:POMPA-BELAKANG:2026-07-16:DAILY",
+      "branchCode": "SKY",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-16",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 1576.69,
+        "inboundQty": 0,
+        "totalQty": 1576.69,
+        "meterStart": 122617,
+        "meterEnd": null,
+        "displayedSalesQty": -122617,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": -2029311350,
+        "displayedClosingQty": 124193.69,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Sekayu",
+        "row": 287
+      }
+    },
+    {
+      "key": "SKY:POMPA-BELAKANG:2026-07-17:DAILY",
+      "branchCode": "SKY",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-17",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 124193.69,
+        "inboundQty": 0,
+        "totalQty": 124193.69,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 124193.69,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Sekayu",
+        "row": 288
+      }
+    },
+    {
+      "key": "SKY:POMPA-BELAKANG:2026-07-18:DAILY",
+      "branchCode": "SKY",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-18",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 124193.69,
+        "inboundQty": 0,
+        "totalQty": 124193.69,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 124193.69,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Sekayu",
+        "row": 289
+      }
+    },
+    {
+      "key": "SKY:POMPA-BELAKANG:2026-07-19:DAILY",
+      "branchCode": "SKY",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-19",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 124193.69,
+        "inboundQty": 0,
+        "totalQty": 124193.69,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 124193.69,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Sekayu",
+        "row": 290
+      }
+    },
+    {
+      "key": "SKY:POMPA-BELAKANG:2026-07-20:DAILY",
+      "branchCode": "SKY",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-20",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 124193.69,
+        "inboundQty": 0,
+        "totalQty": 124193.69,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 124193.69,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Sekayu",
+        "row": 291
+      }
+    },
+    {
+      "key": "SKY:POMPA-BELAKANG:2026-07-21:DAILY",
+      "branchCode": "SKY",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-21",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 124193.69,
+        "inboundQty": 0,
+        "totalQty": 124193.69,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 124193.69,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Sekayu",
+        "row": 292
+      }
+    },
+    {
+      "key": "SKY:POMPA-BELAKANG:2026-07-22:DAILY",
+      "branchCode": "SKY",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-22",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 124193.69,
+        "inboundQty": 0,
+        "totalQty": 124193.69,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 124193.69,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Sekayu",
+        "row": 293
+      }
+    },
+    {
+      "key": "SKY:POMPA-BELAKANG:2026-07-23:DAILY",
+      "branchCode": "SKY",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-23",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 124193.69,
+        "inboundQty": 0,
+        "totalQty": 124193.69,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 124193.69,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Sekayu",
+        "row": 294
+      }
+    },
+    {
+      "key": "SKY:POMPA-BELAKANG:2026-07-24:DAILY",
+      "branchCode": "SKY",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-24",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 124193.69,
+        "inboundQty": 0,
+        "totalQty": 124193.69,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 124193.69,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Sekayu",
+        "row": 295
+      }
+    },
+    {
+      "key": "SKY:POMPA-BELAKANG:2026-07-25:DAILY",
+      "branchCode": "SKY",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-25",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 124193.69,
+        "inboundQty": 0,
+        "totalQty": 124193.69,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 124193.69,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Sekayu",
+        "row": 296
+      }
+    },
+    {
+      "key": "SKY:POMPA-BELAKANG:2026-07-26:DAILY",
+      "branchCode": "SKY",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-26",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 124193.69,
+        "inboundQty": 0,
+        "totalQty": 124193.69,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 124193.69,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Sekayu",
+        "row": 297
+      }
+    },
+    {
+      "key": "SKY:POMPA-BELAKANG:2026-07-27:DAILY",
+      "branchCode": "SKY",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-27",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 124193.69,
+        "inboundQty": 0,
+        "totalQty": 124193.69,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 124193.69,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Sekayu",
+        "row": 298
+      }
+    },
+    {
+      "key": "SKY:POMPA-BELAKANG:2026-07-28:DAILY",
+      "branchCode": "SKY",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-28",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 124193.69,
+        "inboundQty": 0,
+        "totalQty": 124193.69,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 124193.69,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Sekayu",
+        "row": 299
+      }
+    },
+    {
+      "key": "SKY:POMPA-BELAKANG:2026-07-29:DAILY",
+      "branchCode": "SKY",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-29",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 124193.69,
+        "inboundQty": 0,
+        "totalQty": 124193.69,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 124193.69,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Sekayu",
+        "row": 300
+      }
+    },
+    {
+      "key": "SKY:POMPA-BELAKANG:2026-07-30:DAILY",
+      "branchCode": "SKY",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-30",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 124193.69,
+        "inboundQty": 0,
+        "totalQty": 124193.69,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 124193.69,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Sekayu",
+        "row": 301
+      }
+    },
+    {
+      "key": "SKY:POMPA-BELAKANG:2026-07-31:DAILY",
+      "branchCode": "SKY",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-31",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 124193.69,
+        "inboundQty": 0,
+        "totalQty": 124193.69,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 124193.69,
+        "soundingValue": null,
+        "physicalQty": 0,
+        "displayedVarianceQty": -124193.69,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Sekayu",
+        "row": 302
+      }
+    },
+    {
+      "key": "RCK:POMPA-DEPAN:2026-07-16:DAILY",
+      "branchCode": "RCK",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-16",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 743,
+        "inboundQty": 0,
+        "totalQty": 743,
+        "meterStart": 676457,
+        "meterEnd": null,
+        "displayedSalesQty": -676457,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": -10924780550,
+        "displayedClosingQty": 677200,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Rancaekek",
+        "row": 140
+      }
+    },
+    {
+      "key": "RCK:POMPA-DEPAN:2026-07-17:DAILY",
+      "branchCode": "RCK",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-17",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 677200,
+        "inboundQty": 0,
+        "totalQty": 677200,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 677200,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Rancaekek",
+        "row": 141
+      }
+    },
+    {
+      "key": "RCK:POMPA-DEPAN:2026-07-18:DAILY",
+      "branchCode": "RCK",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-18",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 677200,
+        "inboundQty": 0,
+        "totalQty": 677200,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 677200,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Rancaekek",
+        "row": 142
+      }
+    },
+    {
+      "key": "RCK:POMPA-DEPAN:2026-07-19:DAILY",
+      "branchCode": "RCK",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-19",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 677200,
+        "inboundQty": 0,
+        "totalQty": 677200,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 677200,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Rancaekek",
+        "row": 143
+      }
+    },
+    {
+      "key": "RCK:POMPA-DEPAN:2026-07-20:DAILY",
+      "branchCode": "RCK",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-20",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 677200,
+        "inboundQty": 0,
+        "totalQty": 677200,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 677200,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Rancaekek",
+        "row": 144
+      }
+    },
+    {
+      "key": "RCK:POMPA-DEPAN:2026-07-21:DAILY",
+      "branchCode": "RCK",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-21",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 677200,
+        "inboundQty": 0,
+        "totalQty": 677200,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 677200,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Rancaekek",
+        "row": 145
+      }
+    },
+    {
+      "key": "RCK:POMPA-DEPAN:2026-07-22:DAILY",
+      "branchCode": "RCK",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-22",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 677200,
+        "inboundQty": 0,
+        "totalQty": 677200,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 677200,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Rancaekek",
+        "row": 146
+      }
+    },
+    {
+      "key": "RCK:POMPA-DEPAN:2026-07-23:DAILY",
+      "branchCode": "RCK",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-23",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 677200,
+        "inboundQty": 0,
+        "totalQty": 677200,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 677200,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Rancaekek",
+        "row": 147
+      }
+    },
+    {
+      "key": "RCK:POMPA-DEPAN:2026-07-24:DAILY",
+      "branchCode": "RCK",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-24",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 677200,
+        "inboundQty": 0,
+        "totalQty": 677200,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 677200,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Rancaekek",
+        "row": 148
+      }
+    },
+    {
+      "key": "RCK:POMPA-DEPAN:2026-07-25:DAILY",
+      "branchCode": "RCK",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-25",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 677200,
+        "inboundQty": 0,
+        "totalQty": 677200,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 677200,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Rancaekek",
+        "row": 149
+      }
+    },
+    {
+      "key": "RCK:POMPA-DEPAN:2026-07-26:DAILY",
+      "branchCode": "RCK",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-26",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 677200,
+        "inboundQty": 0,
+        "totalQty": 677200,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 677200,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Rancaekek",
+        "row": 150
+      }
+    },
+    {
+      "key": "RCK:POMPA-DEPAN:2026-07-27:DAILY",
+      "branchCode": "RCK",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-27",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 677200,
+        "inboundQty": 0,
+        "totalQty": 677200,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 677200,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Rancaekek",
+        "row": 151
+      }
+    },
+    {
+      "key": "RCK:POMPA-DEPAN:2026-07-28:DAILY",
+      "branchCode": "RCK",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-28",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 677200,
+        "inboundQty": 0,
+        "totalQty": 677200,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 677200,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Rancaekek",
+        "row": 152
+      }
+    },
+    {
+      "key": "RCK:POMPA-DEPAN:2026-07-29:DAILY",
+      "branchCode": "RCK",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-29",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 677200,
+        "inboundQty": 0,
+        "totalQty": 677200,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 677200,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Rancaekek",
+        "row": 153
+      }
+    },
+    {
+      "key": "RCK:POMPA-DEPAN:2026-07-30:DAILY",
+      "branchCode": "RCK",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-30",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 677200,
+        "inboundQty": 0,
+        "totalQty": 677200,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 677200,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Rancaekek",
+        "row": 154
+      }
+    },
+    {
+      "key": "RCK:POMPA-DEPAN:2026-07-31:DAILY",
+      "branchCode": "RCK",
+      "stockUnitCode": "POMPA-DEPAN",
+      "meterUnitCode": "METER-DEPAN",
+      "businessDate": "2026-07-31",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 677200,
+        "inboundQty": 0,
+        "totalQty": 677200,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 677200,
+        "soundingValue": null,
+        "physicalQty": 1053,
+        "displayedVarianceQty": -676147,
+        "note": "Adjust Stock - L"
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Rancaekek",
+        "row": 155
+      }
+    },
+    {
+      "key": "RCK:POMPA-BELAKANG:2026-07-16:DAILY",
+      "branchCode": "RCK",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-16",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 300,
+        "inboundQty": 0,
+        "totalQty": 300,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 300,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Rancaekek",
+        "row": 175
+      }
+    },
+    {
+      "key": "RCK:POMPA-BELAKANG:2026-07-17:DAILY",
+      "branchCode": "RCK",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-17",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 300,
+        "inboundQty": 0,
+        "totalQty": 300,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 300,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Rancaekek",
+        "row": 176
+      }
+    },
+    {
+      "key": "RCK:POMPA-BELAKANG:2026-07-18:DAILY",
+      "branchCode": "RCK",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-18",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 300,
+        "inboundQty": 0,
+        "totalQty": 300,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 300,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Rancaekek",
+        "row": 177
+      }
+    },
+    {
+      "key": "RCK:POMPA-BELAKANG:2026-07-19:DAILY",
+      "branchCode": "RCK",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-19",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 300,
+        "inboundQty": 0,
+        "totalQty": 300,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 300,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Rancaekek",
+        "row": 178
+      }
+    },
+    {
+      "key": "RCK:POMPA-BELAKANG:2026-07-20:DAILY",
+      "branchCode": "RCK",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-20",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 300,
+        "inboundQty": 0,
+        "totalQty": 300,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 300,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Rancaekek",
+        "row": 179
+      }
+    },
+    {
+      "key": "RCK:POMPA-BELAKANG:2026-07-21:DAILY",
+      "branchCode": "RCK",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-21",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 300,
+        "inboundQty": 0,
+        "totalQty": 300,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 300,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Rancaekek",
+        "row": 180
+      }
+    },
+    {
+      "key": "RCK:POMPA-BELAKANG:2026-07-22:DAILY",
+      "branchCode": "RCK",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-22",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 300,
+        "inboundQty": 0,
+        "totalQty": 300,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 300,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Rancaekek",
+        "row": 181
+      }
+    },
+    {
+      "key": "RCK:POMPA-BELAKANG:2026-07-23:DAILY",
+      "branchCode": "RCK",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-23",
+      "shiftCode": "DAILY",
+      "status": "INCOMPLETE_SOURCE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED"
+      ],
+      "raw": {
+        "openingQty": 300,
+        "inboundQty": 0,
+        "totalQty": 300,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 300,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Rancaekek",
+        "row": 182
+      }
+    },
+    {
+      "key": "RCK:POMPA-BELAKANG:2026-07-24:DAILY",
+      "branchCode": "RCK",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-24",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 300,
+        "inboundQty": 0,
+        "totalQty": 300,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 300,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Rancaekek",
+        "row": 183
+      }
+    },
+    {
+      "key": "RCK:POMPA-BELAKANG:2026-07-25:DAILY",
+      "branchCode": "RCK",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-25",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 300,
+        "inboundQty": 0,
+        "totalQty": 300,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 300,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Rancaekek",
+        "row": 184
+      }
+    },
+    {
+      "key": "RCK:POMPA-BELAKANG:2026-07-26:DAILY",
+      "branchCode": "RCK",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-26",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 300,
+        "inboundQty": 0,
+        "totalQty": 300,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 300,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Rancaekek",
+        "row": 185
+      }
+    },
+    {
+      "key": "RCK:POMPA-BELAKANG:2026-07-27:DAILY",
+      "branchCode": "RCK",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-27",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 300,
+        "inboundQty": 0,
+        "totalQty": 300,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 300,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Rancaekek",
+        "row": 186
+      }
+    },
+    {
+      "key": "RCK:POMPA-BELAKANG:2026-07-28:DAILY",
+      "branchCode": "RCK",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-28",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 300,
+        "inboundQty": 0,
+        "totalQty": 300,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 300,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Rancaekek",
+        "row": 187
+      }
+    },
+    {
+      "key": "RCK:POMPA-BELAKANG:2026-07-29:DAILY",
+      "branchCode": "RCK",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-29",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 300,
+        "inboundQty": 0,
+        "totalQty": 300,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 300,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Rancaekek",
+        "row": 188
+      }
+    },
+    {
+      "key": "RCK:POMPA-BELAKANG:2026-07-30:DAILY",
+      "branchCode": "RCK",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-30",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 300,
+        "inboundQty": 0,
+        "totalQty": 300,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 300,
+        "soundingValue": null,
+        "physicalQty": null,
+        "displayedVarianceQty": null,
+        "note": null
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Rancaekek",
+        "row": 189
+      }
+    },
+    {
+      "key": "RCK:POMPA-BELAKANG:2026-07-31:DAILY",
+      "branchCode": "RCK",
+      "stockUnitCode": "POMPA-BELAKANG",
+      "meterUnitCode": "METER-BELAKANG",
+      "businessDate": "2026-07-31",
+      "shiftCode": "DAILY",
+      "status": "FUTURE_TEMPLATE",
+      "blockingReasons": [
+        "METER_END_EMPTY",
+        "DERIVED_SALES_UNTRUSTED",
+        "DERIVED_DEPOSIT_UNTRUSTED",
+        "DERIVED_CLOSING_UNTRUSTED",
+        "BUSINESS_DATE_IN_FUTURE"
+      ],
+      "raw": {
+        "openingQty": 300,
+        "inboundQty": 0,
+        "totalQty": 300,
+        "meterStart": 0,
+        "meterEnd": null,
+        "displayedSalesQty": 0,
+        "salesReturnQty": null,
+        "displayedCashDepositAmount": 0,
+        "displayedClosingQty": 300,
+        "soundingValue": null,
+        "physicalQty": 1053,
+        "displayedVarianceQty": 753,
+        "note": "Adjust Stock - L"
+      },
+      "sourceFormulas": {
+        "salesQty": "meterEnd - meterStart + resetOffset",
+        "cashDepositAmount": "salesQty × workbook selling price",
+        "closingQty": "openingQty + inboundQty - salesQty + salesReturnQty",
+        "note": "Formula text is normalized here; original displayed values remain in raw."
+      },
+      "trustedForPosting": {
+        "openingQty": false,
+        "inboundQty": false,
+        "meterReading": false,
+        "salesQty": false,
+        "salesReturnQty": false,
+        "cashDepositAmount": false,
+        "closingQty": false,
+        "physicalQty": false
+      },
+      "source": {
+        "file": "Laporan Stock Operator Juli 2026.xlsx",
+        "sheet": "Rancaekek",
+        "row": 190
+      }
+    }
+  ]
+}
