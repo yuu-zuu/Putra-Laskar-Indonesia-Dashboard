@@ -15,9 +15,9 @@
     "@spbu/contracts": "1.0.0",
     "@types/react": "19.2.17",
     "@types/react-dom": "19.2.3",
-    "@vitejs/plugin-react": "6.0.3",
-    "react": "19.2.7",
-    "react-dom": "19.2.7",
+    "@vitejs/plugin-react": "6.0.4",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
     "typescript": "7.0.2",
     "vite": "8.1.5",
     "write-excel-file": "4.1.1"
