@@ -11,3 +11,6 @@ coverage/
 *.tsbuildinfo
 storage-data/
 postgres-data/
+.vercel
+
+backups/

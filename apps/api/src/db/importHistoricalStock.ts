@@ -1465,20 +1465,26 @@ async function resolveExistingBranchByName(
 ): Promise<ExistingBranchRow> {
   const result = await client.query<ExistingBranchRow>(
     `SELECT id,code,name,active FROM branch
-     WHERE lower(regexp_replace(btrim(name), '[[:space:]]+', ' ', 'g')) =
-           lower(regexp_replace(btrim($1), '[[:space:]]+', ' ', 'g'))
+     WHERE (
+       lower(regexp_replace(btrim(name), '[[:space:]]+', ' ', 'g')) =
+         lower(regexp_replace(btrim($1), '[[:space:]]+', ' ', 'g'))
+       OR lower(regexp_replace(btrim(code), '[[:space:]]+', ' ', 'g')) =
+         lower(regexp_replace(btrim($1), '[[:space:]]+', ' ', 'g'))
+       OR lower(regexp_replace(btrim(name || ' - ' || code), '[[:space:]]+', ' ', 'g')) =
+         lower(regexp_replace(btrim($1), '[[:space:]]+', ' ', 'g'))
+     )
      ORDER BY id${lock ? " FOR UPDATE" : ""}`,
     [existingBranchName],
   );
   if (result.rows.length === 0) {
     throw new Error(
-      `Branch production untuk source ${sourceBranchCode} tidak ditemukan dengan nama tepat: ${existingBranchName}.`,
+      `Branch production untuk source ${sourceBranchCode} tidak ditemukan dengan nama, kode, atau label: ${existingBranchName}.`,
     );
   }
   if (result.rows.length > 1) {
     throw new Error(
-      `Nama branch production ambigu untuk source ${sourceBranchCode}: ${existingBranchName}. ` +
-        "Pastikan hanya ada satu branch dengan nama tersebut.",
+      `Identifier branch production ambigu untuk source ${sourceBranchCode}: ${existingBranchName}. ` +
+        "Pastikan hanya ada satu branch yang cocok.",
     );
   }
   const branch = requiredRow(result.rows[0], `branch ${existingBranchName}`);

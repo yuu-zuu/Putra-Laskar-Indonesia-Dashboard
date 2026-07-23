@@ -213,8 +213,14 @@ async function resolveTargets(
     const existingBranchName = branchNameForSource(branchMap, requirement.branchCode);
     const branch = await client.query<{ id: string; code: string; name: string }>(
       `SELECT id,code,name FROM branch
-       WHERE lower(regexp_replace(btrim(name), '[[:space:]]+', ' ', 'g')) =
-             lower(regexp_replace(btrim($1), '[[:space:]]+', ' ', 'g'))
+       WHERE (
+         lower(regexp_replace(btrim(name), '[[:space:]]+', ' ', 'g')) =
+           lower(regexp_replace(btrim($1), '[[:space:]]+', ' ', 'g'))
+         OR lower(regexp_replace(btrim(code), '[[:space:]]+', ' ', 'g')) =
+           lower(regexp_replace(btrim($1), '[[:space:]]+', ' ', 'g'))
+         OR lower(regexp_replace(btrim(name || ' - ' || code), '[[:space:]]+', ' ', 'g')) =
+           lower(regexp_replace(btrim($1), '[[:space:]]+', ' ', 'g'))
+       )
          AND active=true
        ORDER BY id`,
       [existingBranchName],
@@ -222,8 +228,8 @@ async function resolveTargets(
     if (branch.rows.length !== 1) {
       throw new Error(
         branch.rows.length === 0
-          ? `Branch production untuk source ${requirement.branchCode} tidak ditemukan: ${existingBranchName}.`
-          : `Nama branch production ambigu untuk source ${requirement.branchCode}: ${existingBranchName}.`,
+          ? `Branch production untuk source ${requirement.branchCode} tidak ditemukan dengan nama, kode, atau label: ${existingBranchName}.`
+          : `Identifier branch production ambigu untuk source ${requirement.branchCode}: ${existingBranchName}.`,
       );
     }
     const branchRow = requiredRow(branch.rows[0], `branch ${existingBranchName}`);
