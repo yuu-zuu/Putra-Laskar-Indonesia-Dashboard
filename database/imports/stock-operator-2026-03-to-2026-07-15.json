@@ -100,6 +100,12 @@
       "severity": "warning",
       "source": "Sekayu/POMPA-BELAKANG",
       "message": "Terdapat 18 saldo akhir harian negatif (terendah -242 L) dan satu kekurangan FIFO intrahari pada POMPA-DEPAN. Importer menggunakan FIFO deficit bridge yang diaudit; seluruh 1.104,070 L bridge pulih oleh penerimaan/retur berikutnya."
+    },
+    {
+      "code": "DUPLICATE_DAILY_OPNAME_COLLAPSED",
+      "severity": "warning",
+      "source": "Pangkalan balai!148-149; Rancaekek!76-77; Rancaekek!115-116",
+      "message": "Tiga pasangan baris pada tanggal yang sama mengulang physical stock setelah baris Adjust Stock. Hanya pengukuran pertama disimpan sebagai stock opname; baris lanjutan tetap diimpor sebagai movement penyesuaian."
     }
   ],
   "expected": {
@@ -107,7 +113,7 @@
       "rows": 694,
       "movements": 712,
       "meterReadings": 677,
-      "stockOpnames": 52
+      "stockOpnames": 49
     },
     "finalBalances": [
       {
@@ -15347,8 +15353,8 @@
       "cashDepositAmount": 5965375.0,
       "inferredSellingPrice": null,
       "closingQty": 153.36,
-      "physicalQty": 153.36,
-      "varianceQty": 0.0,
+      "physicalQty": null,
+      "varianceQty": null,
       "note": "Adjust Stock -477,23 L",
       "source": {
         "file": "Laporan Stock Operator Juli 2026.xlsx",
@@ -15449,7 +15455,7 @@
       "cashDepositAmount": 0.0,
       "inferredSellingPrice": null,
       "closingQty": 2521.0,
-      "physicalQty": 2520.892,
+      "physicalQty": null,
       "varianceQty": null,
       "note": "Adjust Stock -840 L",
       "source": {
@@ -20585,8 +20591,8 @@
       "cashDepositAmount": 0.0,
       "inferredSellingPrice": null,
       "closingQty": 1053.0,
-      "physicalQty": 1053.0,
-      "varianceQty": 0.0,
+      "physicalQty": null,
+      "varianceQty": null,
       "note": "Adjust Stock -49 L",
       "source": {
         "file": "Laporan Stock Operator Juli 2026.xlsx",
